@@ -9,15 +9,15 @@ if spusob == "Bin":
     for digit in binary:
         decimal = decimal*2 + int(digit)
         if 1 <= decimal <= 126:
-            print ("IP adress ma A class")
+            print ("IP adress má A class")
         elif 128 <= decimal <= 191:
-            print ("IP adress ma B class")
+            print ("IP adress má B class")
         elif 192 <= decimal <= 223:
-            print ("IP adress ma C class")
+            print ("IP adress má C class")
         elif 224 <= decimal <= 239:
-            print ("IP adress ma D class")
+            print ("IP adress má D class")
         elif 240 <= decimal <= 254:
-            print ("IP adress ma E class")
+            print ("IP adress má E class")
         else:
             print("Chyba")
     print(decimal)
