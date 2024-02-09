@@ -1,6 +1,6 @@
 print("Vítejte v programu na převod IP adres")
 
-spusob = input("Zadejte způsob (Dec/Bin): ")
+spusob = input("Zadejte způsob převodu (Dec/Bin): ")
 ip_address = input("Zadejte IP adresu: ")
 
 if spusob == "Bin":
@@ -31,4 +31,4 @@ elif spusob == "Dec":
     print("Desítková IP adresa:", decimal_ip)
 
 else:
-    print("Neplatný způsob, zadejte prosím 'Dec' nebo 'Bin'.")
+    print("zadejte prosím 'Dec' nebo 'Bin'.")

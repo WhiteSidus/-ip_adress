@@ -2,26 +2,33 @@ print ("Vitejte v programu na prevod IP adres")
 
 spusob = input("Zadejte sbusob (Dec/Bin): ")
 
-if spusob == "Bin":
+if spusob == "Bin" or "bin":
     binary = input("Zadejte binární číslo: ")
-    
-    #Převod na desitkové číslo
-    decimal = 0
-    for digit in binary:
-        decimal = decimal*2 + int(digit)
-        if 1 <= decimal <= 126:
+    # Rozdělení binární IP adresy na jednotlivé oktety
+    binary_octets = binary.split('.')
+    decimal_ip = ""
+    # Převod každého binárního oktetu na desítkový formát
+    for binary_octet in binary_octets:
+        decimal_octet = str(int(binary_octet, 2))
+        decimal_ip += decimal_octet + '.'
+    decimal_ip = decimal_ip[:-1]  # Odstranění poslední tečky
+
+    # Určujeme class IP adresy
+    for digit in decimal_ip:
+        if 1 <= decimal_ip <= 126:
             print ("IP adress má A class")
-        elif 128 <= decimal <= 191:
+        elif 128 <= decimal_ip <= 191:
             print ("IP adress má B class")
-        elif 192 <= decimal <= 223:
+        elif 192 <= decimal_ip <= 223:
             print ("IP adress má C class")
-        elif 224 <= decimal <= 239:
+        elif 224 <= decimal_ip <= 239:
             print ("IP adress má D class")
-        elif 240 <= decimal <= 254:
+        elif 240 <= decimal_ip <= 254:
             print ("IP adress má E class")
         else:
             print("Chyba")
-    print(decimal)
+    print("Desítková IP adresa:", decimal_ip)
+
 
 elif spusob == "Dec":
     decimal = int(input("Zadejte desítkové číslo: "))
